@@ -27,8 +27,8 @@ public class BerlinClockHours implements TimeUnit {
 
     @Override
     public String getTimeRepresentation(int hours) {
-        if(hours < 0 || hours > 24)
-            throw new  InvalidValueFortimeException(hours, "hours");
+        if (hours < 0 || hours > 24)
+            throw new InvalidValueFortimeException(hours, "hours");
         return getMultipleOfFiveHourRepresentation(hours) + "\n" + getSingleHourRepresentation(hours);
     }
 }

@@ -15,7 +15,6 @@ public class BerlinClock implements TimeConverter{
         timeUnits.add(new BerlinClockSecond());
         timeUnits.add(new BerlinClockHours());
         timeUnits.add(new BerlinClockMinute());
-
     }
 
     @Override

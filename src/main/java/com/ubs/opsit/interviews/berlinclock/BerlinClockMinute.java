@@ -31,8 +31,8 @@ public class BerlinClockMinute implements TimeUnit {
 
     @Override
     public String getTimeRepresentation(int minute) {
-        if(minute < 0 || minute > 59)
-            throw new  InvalidValueFortimeException(minute, "minutes");
+        if (minute < 0 || minute > 59)
+            throw new InvalidValueFortimeException(minute, "minutes");
         int minuteDivided = minute / 5;
         int minuteModule = minute % 5;
         return getFiveMinuteRepresentation(minuteDivided) + "\n" + getSingleMinuteRepresentation(minuteModule);
