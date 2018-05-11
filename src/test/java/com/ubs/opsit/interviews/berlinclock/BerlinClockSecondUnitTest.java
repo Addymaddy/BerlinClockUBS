@@ -31,8 +31,19 @@ public class BerlinClockSecondUnitTest {
     }
 
 
-    //Add unit test for 59 seconds
-    //Add unit Test case for 60 seconds
+    @Test(expected = InvalidValueFortimeException.class)
+    public void testMaximumExceptionalValueforSecond(){
+        int seconds = 60;
+        String result = berlinClockSecond.getTimeRepresentation(seconds);
+
+    }
+
+    @Test(expected = InvalidValueFortimeException.class)
+    public void testMinimumExceptionalValueforSecond(){
+        int seconds = -1;
+        String result = berlinClockSecond.getTimeRepresentation(seconds);
+
+    }
 
 }
 

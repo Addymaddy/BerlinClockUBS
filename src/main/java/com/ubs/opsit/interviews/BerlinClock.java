@@ -27,5 +27,6 @@ public class BerlinClock implements TimeConverter{
         timeS.append(timeUnits.get(1).getTimeRepresentation(Integer.parseInt(timeElemnts[0]))).append("\n");
         timeS.append(timeUnits.get(2).getTimeRepresentation(Integer.parseInt(timeElemnts[1]))).append("\n");
 
-        return timeS.toString();    }
+        return timeS.toString().trim();
+    }
 }

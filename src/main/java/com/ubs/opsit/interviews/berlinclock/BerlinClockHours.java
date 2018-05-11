@@ -8,7 +8,7 @@ public class BerlinClockHours implements TimeUnit {
     private static final String RED_LiGHT = "R";
     private static final int MULTIPLE_OF_FIVE = 5;
 
-    public String getMultipleOfFiveHourRepresentation(int hour) {
+    private String getMultipleOfFiveHourRepresentation(int hour) {
         StringBuffer lamps = new StringBuffer(ALL_LIGHTS_OFF);
         for (int i = 0; i < (hour / MULTIPLE_OF_FIVE); i++) {
             lamps.replace(i, i + 1, RED_LiGHT);
@@ -16,7 +16,7 @@ public class BerlinClockHours implements TimeUnit {
         return lamps.toString();
     }
 
-    public String getSingleHourRepresentation(int hour) {
+    private String getSingleHourRepresentation(int hour) {
         StringBuffer lamp = new StringBuffer(ALL_LIGHTS_OFF);
         for (int i = 0; i < (hour % MULTIPLE_OF_FIVE); i++) {
             lamp.replace(i, i + 1, RED_LiGHT);
@@ -27,6 +27,8 @@ public class BerlinClockHours implements TimeUnit {
 
     @Override
     public String getTimeRepresentation(int hours) {
+        if(hours < 0 || hours > 24)
+            throw new  InvalidValueFortimeException(hours, "hours");
         return getMultipleOfFiveHourRepresentation(hours) + "\n" + getSingleHourRepresentation(hours);
     }
 }

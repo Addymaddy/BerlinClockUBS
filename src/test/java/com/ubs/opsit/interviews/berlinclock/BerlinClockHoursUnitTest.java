@@ -33,7 +33,17 @@ public class BerlinClockHoursUnitTest {
     }
 
 
-    //Add Unit test for 24 hours
+    @Test(expected = InvalidValueFortimeException.class)
+    public void testMaximumExceptionalValueForHour(){
+        int hour = 25;
+        String result  = berlinClockHour.getTimeRepresentation(hour);
+    }
 
+    @Test(expected = InvalidValueFortimeException.class)
+    public void testMinimumExceptionalValueforHour(){
+        int hour = -1;
+        String result = berlinClockHour.getTimeRepresentation(hour);
+
+    }
 
 }

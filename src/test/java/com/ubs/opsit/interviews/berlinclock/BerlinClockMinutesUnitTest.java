@@ -65,15 +65,16 @@ public class BerlinClockMinutesUnitTest {
     }
 
 
-    //60 minutes
-   // @Test
-    public void testRepresentationForInvalidSixtyMinute(){
+    @Test(expected = InvalidValueFortimeException.class)
+    public void testMaximumExceptionalValueForMinute(){
         int min = 60;
         String result  = berlinClockMinute.getTimeRepresentation(min);
-        System.out.println("result ---> "+ result);
-
-        String expectedResult = "YYRYYRYYRYY\nYYYY";
-        Assert.assertEquals(expectedResult, result);
     }
 
+    @Test(expected = InvalidValueFortimeException.class)
+    public void testMinimumExceptionalValueforMinimum(){
+        int minute = -1;
+        String result = berlinClockMinute.getTimeRepresentation(minute);
+
+    }
 }
